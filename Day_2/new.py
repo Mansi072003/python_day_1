@@ -109,7 +109,11 @@ print(divide(a, b))
 
 # 8. Memory Leaks and Performance Debugging
 # Optimized Code (Using Generators)
+
 # Instead of storing all values in a list, we can use a generator to yield values on demand, reducing memory usage.
+
+# or
+# we can also make list and can add to direct index 
 import time
 
 def efficient_function():
