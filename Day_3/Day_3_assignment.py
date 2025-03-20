@@ -114,3 +114,18 @@ print(f"Wildcard import time: {end - start:.6f} seconds")
 # Write a setup.py to make it installable.
 # Install your package locally.
 # Import and test your package.
+
+
+# 7. Investigate sys.path
+# Explore sys.path and add a custom directory to import modules from an unconventional path.
+# this question solution has been added in the calculator.py file
+
+# 9. Import Side Effects
+# created module.py
+import my_module
+
+# 10. Investigate Python’s Import Caching
+# using module.py file only
+import sys
+# Check if the module is cached
+print(sys.modules['my_module'])
