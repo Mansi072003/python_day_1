@@ -108,3 +108,9 @@ from math import *  # Importing all functions from the module
 end = time.time()
 
 print(f"Wildcard import time: {end - start:.6f} seconds")
+
+# 6. Module Creation and Distribution
+# Create a Python package structure with __init__.py.
+# Write a setup.py to make it installable.
+# Install your package locally.
+# Import and test your package.
