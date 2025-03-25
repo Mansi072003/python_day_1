@@ -149,10 +149,80 @@ print("".join(chars))  # Output: "Python"
 ## 20. How do we remove duplicates while preserving order?
 Using a set:
 ```python
-def remove_duplicates(lst):
-    seen = set()
-    return [x for x in lst if not (x in seen or seen.add(x))]
+lst =[2,3,5,4,1,2,4,3,5,6]
+res =[]
+for i in lst:
+    if i not in res:
+        res.append(i)
+print(sorted(res))  # Output: [1, 2, 3, 4]
+```
 
-print(remove_duplicates([1, 2, 2, 3, 4, 3]))  # Output: [1, 2, 3, 4]
+## Sort a List of Tuples by the Second Element
+```python
+lst = [(1,4), (3,2), (5,6)]
+res = []
+for tup in lst:
+    res.append(tup[1])
+print(sorted(res))
+```
+
+## Flatten a Nested List of Arbitrary Depth
+```python
+lst = [[1,2,3], [4,5,6], [7,8,9]]  # Flattened output: [1,2,3,4,5,6,7,8,9]
+res = []
+for i in lst:
+    for j in i:
+        res.append(j)
+print(res)
+```
+
+## Using Recursion
+```python
+def flatten(lst): 
+    res = []
+    for i in lst:
+        if isinstance(i, list):  # Check if i is a list
+            res.extend(flatten(i))  # Recursive call
+        else:
+            res.append(i)
+    return res
+print(flatten([[1,2,3], [4,5,6], [7,8,9]]))
+```
+
+# Rotate a List to the Right by k Steps
+```python
+def rotate_list(lst, k):
+    n = len(lst)
+    k = k % n
+    for i in range(k):
+        last = lst[-1]
+        for j in range(n-1, 0, -1):
+            lst[j] = lst[j-1]
+        lst[0] = last
+    return lst
+print(rotate_list([1,2,3,4,5], 2))    
+```    
+
+# Check if Two Strings are Anagrams
+```python
+def anagram(s1, s2):
+    return sorted(s1) == sorted(s2)
+print(anagram("listen", "silent")) 
+```
+
+# Split a List into Chunks of a Specified Size
+```python
+lst = [1,2,3,4,5,6,7,8,9]
+n = 3
+chunks = [lst[i:i+n] for i in range(0, len(lst), n)]
+print(chunks)
+```
+
+# Merge Two Sorted Lists into One Sorted List
+```python
+def merge(l1, l2):
+    l1.extend(l2)
+    return sorted(l1)
+print(merge([1,2,3], [4,5,6]))
 ```
 

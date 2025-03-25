@@ -1,5 +1,5 @@
 print("This runs on import!")
 
-def greet():
-    print("Hello from my_module!")
+def greet(name):
+    return f"hello ,{name}"
 

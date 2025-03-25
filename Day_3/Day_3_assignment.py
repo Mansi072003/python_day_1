@@ -18,27 +18,18 @@ print(call_func_b())
 #  2. Dynamic Module Loading
 # Write a program that dynamically imports and executes a function from any module specified by the user.
 
-import importlib
+# Get user input
+module_name = input("Enter module name: ")  # Example: math
+function_name = input("Enter function name: ")  # Example: sqrt
+argument = input("Enter argument: ")  # Example: 25
 
-module_name = input("Enter module name: ")  
-function_name = input("Enter function name: ") 
-argument = float(input("Enter argument: ")) 
-
+# Dynamically import the module
 try:
- 
-    module = importlib.import_module(module_name)
-
-    func = getattr(module, function_name)
-    
-    # Execute function and print result
-    result = func(argument)
+    module = importlib.import_module(module_name)  # Import the module
+    func = getattr(module, function_name)  # Get the function
+    result = func(float(argument))  # Convert argument to float and execute
     print("Output:", result)
-
-except ModuleNotFoundError:
-    print("Error: Module not found!")
-except AttributeError:
-    print("Error: Function not found in module!")
-except Exception as e:
+except (ModuleNotFoundError, AttributeError, ValueError) as e:
     print("Error:", e)
 
 # 3. Custom Module with Exception Handling
