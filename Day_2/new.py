@@ -116,15 +116,14 @@ print(divide(a, b))
 # we can also make list and can add to direct index 
 import time
 
-def efficient_function():
+def inefficient_function():
+    result = []
     for i in range(100000):
-        yield i * 2  # Yield values one by one instead of storing them all
+        result.append(i * 2)
+    time.sleep(2)
+    return result
 
-# Process the values efficiently without storing them all in memory
-count = sum(1 for _ in efficient_function())
-
-time.sleep(2)  # Simulate delay (if needed)
-print("Count:", count)  # Output: 100000
+print(len(inefficient_function()))
 
 # 9. Unexpected None
 # Problem: Function Returns None

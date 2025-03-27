@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 image = Image.open("input.jpg")  # Replace with your image file
 
 # Invert the image colors
-inverted_image = ImageOps.invert(image.convert("RGB"))  # Convert to RGB before inverting
+inverted_image = ImageOps.invert(image.convert("RGB")) 
 
 # Save or show the result
 inverted_image.show()  # Display the image
