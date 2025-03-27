@@ -191,16 +191,13 @@ print(flatten([[1,2,3], [4,5,6], [7,8,9]]))
 
 # Rotate a List to the Right by k Steps
 ```python
-def rotate_list(lst, k):
-    n = len(lst)
-    k = k % n
-    for i in range(k):
-        last = lst[-1]
-        for j in range(n-1, 0, -1):
-            lst[j] = lst[j-1]
-        lst[0] = last
-    return lst
-print(rotate_list([1,2,3,4,5], 2))    
+def rotate_right(lst, k):
+    if not lst:  # Handle empty list case
+        return []
+
+    k = k % len(lst)  # Ensure k is within bounds (avoids unnecessary rotations)
+    
+    return lst[-k:] + lst[:-k]  # Slice and concatenate  
 ```    
 
 # Check if Two Strings are Anagrams

@@ -33,7 +33,7 @@ config_list = [tuple(x.split("=")) for x in config]
 print(config_list)
 ```
 
-# Social Media Data Cleaner
+<!-- # Social Media Data Cleaner
 ```python
 post = "Loving the new #Python course! #Coding #Python #Learning"
 
@@ -177,4 +177,4 @@ compressed = zlib.compress(data.encode())
 print(compressed)
 decompressed = zlib.decompress(compressed).decode()
 print(decompressed)
-```
+``` -->
