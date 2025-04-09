@@ -1,4 +1,4 @@
-from employee import add_employee, view_employees, mark_attendance, view_attendance, delete_employee
+from employee import add_employee, view_employees, mark_attendance, view_attendance, delete_employee,attendance_report
 
 while True:
     print("\nEmployee Attendance System")
@@ -7,7 +7,8 @@ while True:
     print("3. Mark Attendance")
     print("4. View Attendance")
     print("5. Delete Employee")
-    print("6. Exit")
+    print("6. Attendance Report")
+    print("7. Exit")
 
     choice = input("Enter your choice: ")
 
@@ -38,8 +39,11 @@ while True:
             delete_employee(emp_id)
         except ValueError:
             print("Invalid ID! Enter a number.")
-
+    
     elif choice == "6":
+        attendance_report()
+
+    elif choice == "7":
         print("Exiting... Have a great day!")
         break
 

@@ -13,7 +13,6 @@ def check_password_strength(password):
     else:
         return "Weak"
 
-# Main program loop
 while True:
     password = input("Enter a password: ")
     strength = check_password_strength(password)
