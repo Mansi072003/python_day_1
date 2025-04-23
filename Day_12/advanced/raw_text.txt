@@ -1,0 +1,2 @@
+Hello, this is a line with leading spaces.
+This line has a tab at the beginning.    And in between.
